@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "@googleapis/docs": "^0.2.0",
+    "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "firebase-admin": "^9.11.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "node-schedule": "^2.0.0",
+    "passport": "^0.4.1",
+    "passport-kakao": "^1.0.1",
+    "request": "^2.88.2",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
+  },
+  "name": "hijun1_teamgctest",
+  "version": "1.0.0",
+  "main": "web.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "hijun1@teamgctest.cafe24app.com:hijun1_teamgctest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

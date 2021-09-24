@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <div ><%= nickname %> <a href="<%= action_url %>/logout">logout</a></div>
+    <table id="table" name="table">
+        <tr>
+            <th>글번호</th>
+            <th>이미지</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+            <th>링크</th>
+            <th><input type="button" id="btnAdd" value="추가" onclick="articleAdd()"></th>
+        </tr>
+        <% queryResult.forEach((article)=> { %>
+            <tr>
+                <td>
+                    <%= article.no %>
+                </td>
+                <td>
+                    <% if(article.image_url !='' ) { %>
+                        <img src="<%= article.image_url %>" height="100" width="100">
+                        <% } %>
+                </td>
+                <td>
+                    <%= article.title %>
+                </td>
+                <td>
+                    <%= article.nickname %>
+                </td>
+                <td>
+                    <%= article.contents %>
+                </td>
+                <td>
+                    <%= article.date %>
+                </td>
+                <td>
+                    <a href="<%= article.page_link %>"><%= article.page_link %></a>
+                </td>
+                <td><input type="button" id="btnUpdate" value="수정" onclick="articleUpdate(<%= article.no %>)"></td>
+                <td><input type="button" id="btnDelete" value="삭제" onclick="articleDelete(<%= article.no %>)"></td>
+            </tr>
+            <% }) %>
+    </table>
+    <script>
+        function articleAdd() {
+            location.href = "<%= action_url %>/add";
+        }
+        function articleUpdate(no) {
+            location.href = "<%= action_url %>/update?no=" + no;
+        }
+        function articleDelete(no) {
+            if (confirm("정말로 삭제하시겠습니까?")) {
+                location.href = "<%= action_url %>/delete?no=" + no;
+            }
+        }
+    </script>
+</body>
+</html>

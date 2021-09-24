@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><%= nickname %> <a href="<%= action_url %>/logout">logout</a></div>
+    <form action="<%= action_url %>" method="POST" id="form" name="form" >
+        <label for="title">타이틀</label><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="contents">내용</label><br>
+        <textarea id="contents" name="contents"rows="5" cols="33" required></textarea><br>
+        <label for="link">기사 링크</label><br>
+        <input type="text" id="link" name="link" required><br>
+        <label for="imagelink">이미지 링크</label><br>
+        <input type="text" name="imagelink" id="imagelink" ><br>
+        <label for="language">언어</label><br>
+        <select name="language" id="language">
+            <option value="0">한국어</option>
+            <option value="1">영어</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
